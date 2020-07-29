@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<htmt>
+  <header>
+    <title>This is a site for my nephew</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script>
+      function myFunction() {
+          document.getElementById("Tiger").style.backgroundColor = "green";
+      }
+    </script>
+  </header>
+  <body>
+    <div id="header">
+      <h1>Hi Flynn!</h1>
+   
+      <div id="container">
+        <p><b>Choose the animal that makes this noise</b></p>
+        <div>
+          <audio controls>
+            <source src="https://www.google.com/logos/fnbx/animal_sounds/alpaca.mp3">
+          </audio>
+        </div>
+        <button id="first_button" onclick="myFunction()"><img src="https://www.google.com/logos/fnbx/animal_sounds/african-grey-parrot.png" /></button>
+        <button id="second_button"><img src="https://www.google.com/logos/fnbx/animal_sounds/alligator.png" /></button>
+        <button id="third_button"><img src="https://www.google.com/logos/fnbx/animal_sounds/alpaca.png" /></button>
+        <div>
+          <button>New animals</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</htmt>
