@@ -1,32 +1,107 @@
 <!DOCTYPE html>
 <htmt>
-  <header>
+  <head>
     <title>This is a site for my nephew</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script>
-      function myFunction() {
-          document.getElementById("Tiger").style.backgroundColor = "green";
-      }
-    </script>
-  </header>
+    <script type="text/javascript" src="index.js"></script>
+  </head>
   <body>
     <div id="header">
-      <h1>Hi Flynn!</h1>
-   
-      <div id="container">
+      <div class="container">
+        <h1>Hi Flynn!</h1>
         <p><b>Choose the animal that makes this noise</b></p>
-        <div>
-          <audio controls>
-            <source src="https://www.google.com/logos/fnbx/animal_sounds/alpaca.mp3">
-          </audio>
+        <div id="audio-card-container">
+          <div id="audio-container"></div>
+          <div id="animal-container"></div>
         </div>
-        <button id="first_button" onclick="myFunction()"><img src="https://www.google.com/logos/fnbx/animal_sounds/african-grey-parrot.png" /></button>
-        <button id="second_button"><img src="https://www.google.com/logos/fnbx/animal_sounds/alligator.png" /></button>
-        <button id="third_button"><img src="https://www.google.com/logos/fnbx/animal_sounds/alpaca.png" /></button>
-        <div>
-          <button>New animals</button>
-        </div>
+        <button id="new-animals">New animals</button>
       </div>
     </div>
+
+    <script>
+
+  
+      // let animals = shuffleAnimals(animalsArray)
+      // const randomAnimal = animals[Math.floor(Math.random() * animals.length)]
+
+      // Get urls for audio and images
+      const imageURL = (animal) => `https://www.google.com/logos/fnbx/animal_sounds/${animal}.png`
+      const audioURL = (randomAnimal) => `https://www.google.com/logos/fnbx/animal_sounds/${randomAnimal}.mp3`
+
+      function buildGame() {
+        const newGameBtn = document.getElementById("new-animals")
+        newGameBtn.addEventListener("click", (event) => {
+
+          let audioCheck = document.getElementById("animal-audio")
+
+          if(typeof(audioCheck) != 'undefined' && audioCheck != null){
+            const animalButton = document.querySelectorAll(".animal-button");
+            animalButton.forEach((button) =>  {
+              button.remove();
+            })
+            removeGame("#animal-audio");
+            ;
+          }
+
+          // Builds animal audio and random set of 3 animals for buttons
+          let animals = shuffleAnimals(animalsArray)
+          const randomAnimal = animals[Math.floor(Math.random() * animals.length)]
+
+          animals = animals.map((animal) => {
+            console.log(typeof(animal))
+            return createAnimalButton(animal)
+          })
+
+          var animalAudio = createAnimalAudio(randomAnimal)
+          var audioContainer = document.getElementById("audio-container")
+          var animalContainer = document.getElementById("animal-container")
+          audioContainer.append(animalAudio)
+          animalContainer.append(...animals)
+
+
+        function clickStyle(event, animal){
+          if (animal === randomAnimal) {
+            event.currentTarget.classList.add("success-background")
+          } else {
+            event.currentTarget.classList.add("fail-background")
+          }
+        }
+
+        // builds the animal button html element and nested image tag
+        function createAnimalButton(animal){
+          let button = document.createElement("button")
+          let image = document.createElement("img")
+          button.className = "animal-button"
+          button.addEventListener("click", (event) => clickStyle(event, animal))
+          image.src = imageURL(animal)
+          button.appendChild(image)
+          return button
+        }
+
+        // builds audio control element for random animal from buttons
+        function createAnimalAudio(randomAnimal){
+          let audio = document.createElement("audio")
+          audio.controls = true
+          audio.id = "animal-audio"
+          audio.src = audioURL(randomAnimal)
+          return audio
+        } 
+          
+        })
+      }
+
+      function clearBox(elementID) {
+        document.getElementById(elementID).innerHTML = "";
+      }
+
+      function removeGame(element) {
+        var elem = document.querySelector(`${element}`);
+        elem.parentNode.removeChild(elem);
+      }
+
+      buildGame();
+
+    </script>
+
   </body>
 </htmt>
