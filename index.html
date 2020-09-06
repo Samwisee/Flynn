@@ -14,6 +14,7 @@
           <div id="audio-container"></div>
           <div id="animal-container"></div>
         </div>
+        <div id="answer"><h4></h4></div>
         <button id="new-animals">New animals</button>
       </div>
     </div>
@@ -31,6 +32,9 @@
       function buildGame() {
         const newGameBtn = document.getElementById("new-animals")
         newGameBtn.addEventListener("click", (event) => {
+
+          const answer = document.querySelector("#answer")
+            answer.innerHTML = `<h4></h4>`
 
           let audioCheck = document.getElementById("animal-audio")
 
@@ -62,6 +66,8 @@
         function clickStyle(event, animal){
           if (animal === randomAnimal) {
             event.currentTarget.classList.add("success-background")
+            const answer = document.querySelector("#answer")
+            answer.innerHTML = `<h2>Yes it's an ${randomAnimal}!</h2>`
           } else {
             event.currentTarget.classList.add("fail-background")
           }
