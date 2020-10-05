@@ -67,9 +67,22 @@
           if (animal === randomAnimal) {
             event.currentTarget.classList.add("success-background")
             const answer = document.querySelector("#answer")
-            answer.innerHTML = `<h2>Yes it's an ${randomAnimal}!</h2>`
+            answer.innerHTML = `<h2>Yes it's ${prefix(randomAnimal)} ${randomAnimal}!</h2>`
           } else {
             event.currentTarget.classList.add("fail-background")
+          }
+        }
+
+        prefix = (animal) => {
+
+          if (animal[0] === "a" ||
+              animal[0] === "e" ||
+              animal[0] === "i" || 
+              animal[0] === "o" || 
+              animal[0] === "u") {
+            return "an"
+          } else {
+            return "a"
           }
         }
 
