@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta 
+     name='viewport' 
+     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' 
+/>
     <title>This is a site for my nephew</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="shortcut icon" type="image" href="images/favicon.png" />
     <script type="text/javascript" src="index.js"></script>
   </head>
   <body>
-    <div id="header">
+    <div id="background">
       <div class="container">
-        <h1 style="padding: 0;">Hi Flynn!</h1>
-        <p style="margin-top: 0"><b>Choose the animal<br/> that makes this noise</b></p>
+        <h1 style="margin: 10px 0 0 5px;">Hi Flynn!</h1>
+        <p style="margin: 0 0 10px 10px"><b>Choose the animal<br/> that makes this noise</b></p>
         <div id="audio-card-container">
           <div id="audio-container"></div>
           <div id="animal-container"></div>
         </div>
         <div id="answer"><h4></h4></div>
-        <button id="new-animals">New animals</button>
+        <button style="margin: 0 0 0 10px" id="new-animals">New animals</button>
       </div>
     </div>
 
     <script>
-
-  
-      // let animals = shuffleAnimals(animalsArray)
-      // const randomAnimal = animals[Math.floor(Math.random() * animals.length)]
 
       // Get urls for audio and images
       const imageURL = (animal) => `https://www.google.com/logos/fnbx/animal_sounds/${animal}.png`

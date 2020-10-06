@@ -11,7 +11,9 @@ h1 {
   font-size: 100px;
   margin: 0;
   padding: 10px;
+  font-size: 70px;
 }
+
 p {
   color: blue;
   font-size: 30px;
@@ -20,11 +22,12 @@ p {
 #animal-container {
   display: flex;
   justify-content: space-between;
-  width: 400px;
+  height: 120px;
+  width: 300px;
   margin: 10px 0;
 }
 
-#header {
+#background {
   position: relative;
   bottom: 0;
   background-image: url("images/Daniel_Tiger.png");
@@ -33,10 +36,13 @@ p {
   background-position: bottom;
   background-color: #B6EBFF ;
   height: 100vh;
+  width: 100vw;
 }
 
 .container {
-  padding: 10px;
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
 }
 
 #new-animals {
