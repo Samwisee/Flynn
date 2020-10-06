@@ -25,9 +25,13 @@ p {
 }
 
 #header {
+  position: relative;
+  bottom: 0;
   background-image: url("Daniel_Tiger.png");
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: contain;
+  background-position: bottom;
+  background-color: #B6EBFF ;
   height: 100vh;
 }
 
