@@ -20,10 +20,10 @@ p {
 }
 
 #animal-container {
-  display: flex;
+  display: inline-block;
   justify-content: space-between;
   height: 120px;
-  width: 300px;
+  width: 380px;
   margin: 10px 0;
 }
 
@@ -43,6 +43,7 @@ p {
   width: 100%;
   overflow: hidden;
   margin: auto;
+  padding: 10px
 }
 
 #new-animals {

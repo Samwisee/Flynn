@@ -7,5 +7,5 @@ hardAnimalsArray = ["komodo-dragon", "butterfly", ]
 
 function shuffleAnimals (array){
   const shuffled = array.sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, 3);
+  return shuffled.slice(0, 4);
 }
