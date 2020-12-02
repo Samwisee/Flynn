@@ -41,7 +41,7 @@ p {
   width: 100%;
   overflow: hidden;
   margin: auto;
-  padding: 20px
+  padding-left: 20px;
 }
 
 #new-animals {
