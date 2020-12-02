@@ -16,6 +16,7 @@ h1 {
 p {
   color: blue;
   font-size: 30px;
+  margin: 10px 0;
 }
 
 #animal-container {
