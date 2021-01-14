@@ -45,6 +45,10 @@ p {
   padding-left: 20px;
 }
 
+#audio-card-container {
+  width: 100px;
+}
+
 #new-animals {
 }
 
@@ -93,15 +97,14 @@ p {
   z-index: 999999;
   display: flex;
   align-items: center;
-  animation:spinner-wrapper 1s 1;
+  animation: spinner-wrapper 1s 1;
   animation-delay: 2s;
   animation-fill-mode: forwards;
-
 }
 
 @keyframes spinner-wrapper{
-  from {opacity :1; height:100%;}
-  to {opacity :0; height: 0;}
+  from {opacity :1 }
+  to {opacity :0 }
 }
 
 .sk-folding-cube {
