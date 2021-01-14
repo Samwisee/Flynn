@@ -1,6 +1,6 @@
 # Project Nephew
 
-This project is an educational site for my nephew. It is built on HTML/CSS?JS, planning to convert to TS for the practice.
+This project is an educational site for my nephew. It is built on HTML/CSS JS, planning to convert to TS for the practice.
 
 ## Animal guessing game
 
