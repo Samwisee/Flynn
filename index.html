@@ -63,9 +63,7 @@
         const newGameBtn = document.getElementById("new-animals")
         newGameBtn.addEventListener("click", (event) => {
 
-          const answer = document.querySelector("#answer")
-            answer.innerHTML = `<h4></h4>`
-
+          // Check if 
           let audioCheck = document.getElementById("animal-audio")
 
           if(typeof(audioCheck) != 'undefined' && audioCheck != null){
@@ -92,7 +90,7 @@
           audioContainer.append(animalAudio)
           animalContainer.append(...animals)
 
-
+        // Checks if the button clicked by the user is the correct animal or not and applies background color
         function clickStyle(event, animal){
           if (animal === randomAnimal) {
             event.currentTarget.classList.add("success-background")
@@ -105,8 +103,9 @@
           }
         }
 
-        prefix = (animal) => {
 
+        // Changes the prefix for the animal depending on vowels
+        prefix = (animal) => {
           if (animal[0] === "a" ||
               animal[0] === "e" ||
               animal[0] === "i" || 
@@ -118,7 +117,7 @@
           }
         }
 
-        // builds the animal button html element and nested image tag
+        // Builds the animal button html element and nested image tag
         function createAnimalButton(animal){
           let button = document.createElement("button")
           let image = document.createElement("img")
@@ -126,10 +125,11 @@
           button.addEventListener("click", (event) => clickStyle(event, animal))
           image.src = imageURL(animal)
           button.appendChild(image)
+          answer.innerHTML = ''
           return button
         }
 
-        // builds audio control element for random animal from buttons
+        // Builds audio control element for random animal from buttons
         function createAnimalAudio(randomAnimal){
           let audio = document.createElement("audio")
           audio.controls = true
@@ -145,6 +145,7 @@
         document.getElementById(elementID).innerHTML = "";
       }
 
+      // Clear game
       function removeGame(element) {
         var elem = document.querySelector(`${element}`);
         elem.parentNode.removeChild(elem);
