@@ -103,8 +103,8 @@ p {
 }
 
 @keyframes spinner-wrapper{
-  from {opacity :1 }
-  to {opacity :0 }
+  from {opacity :1; }
+  to {opacity :0; height: 0 }
 }
 
 .sk-folding-cube {
