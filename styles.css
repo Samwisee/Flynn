@@ -25,6 +25,11 @@ p {
   justify-content: center;
 }
 
+#answer {
+  text-align: center;
+  max-width: 300px;
+}
+
 #background {
   position: relative;
   bottom: 0;
